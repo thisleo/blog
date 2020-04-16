@@ -117,6 +117,14 @@
 <p><strong>附作者文章链接：<a href="https://juejin.im/post/5c825ac6f265da2db9129bd0" target="_blank" rel="noopener">https://juejin.im/post/5c825ac6f265da2db9129bd0</a></strong></p>
 <p><strong>在作者的启发下完成此demo, 如果对你有帮助请不要吝啬star</strong></p>
 ]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Walle</tag>
+        <tag>360加固</tag>
+        <tag>Gradle</tag>
+      </tags>
   </entry>
   <entry>
     <title>RecyclerView中的EditText被软键盘遮挡的解决办法</title>
@@ -124,6 +132,13 @@
     <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"> </span><br><span class="line">getWindow().getDecorView().getViewTreeObserver().addOnGlobalLayoutListener(<span class="keyword">new</span> ViewTreeObserver.OnGlobalLayoutListener() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onGlobalLayout</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        mImgKeyboard.setImageResource(KeyboardUtils.isSoftShowing(ForumsPublishPostActivity.<span class="keyword">this</span>)</span><br><span class="line">                ? R.mipmap.jianpan_down_ico : R.mipmap.jianpan_ico);</span><br><span class="line"> </span><br><span class="line">        <span class="comment">// 除了软键盘以外的可见区域</span></span><br><span class="line">        Rect rect = <span class="keyword">new</span> Rect();</span><br><span class="line">        getWindow().getDecorView().getWindowVisibleDisplayFrame(rect);</span><br><span class="line">        <span class="comment">// 计算出剩余高度：  除了状态栏高度、topBar高度、bottomBar高度、键盘高度的剩余高度</span></span><br><span class="line">        <span class="keyword">int</span> invisibleHeight = rect.bottom</span><br><span class="line">                - ViewUtils.getSystemBarHeight(ForumsPublishPostActivity.<span class="keyword">this</span>)</span><br><span class="line">                - ViewUtils.dp2px(ForumsPublishPostActivity.<span class="keyword">this</span>, <span class="number">44</span>)</span><br><span class="line">                - ViewUtils.dp2px(ForumsPublishPostActivity.<span class="keyword">this</span>, <span class="number">44</span>);</span><br><span class="line"> </span><br><span class="line">        <span class="comment">// 计算出所点击的图片描述的EditText距离RecyclerView顶部的距离</span></span><br><span class="line">        View etDescView = mRecyclerview.getLayoutManager().findViewByPosition(mAdapter.etFocusPosition);</span><br><span class="line">        <span class="keyword">if</span> (etDescView != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> focusViewTop = etDescView.getTop();</span><br><span class="line">            <span class="keyword">int</span> itemHeight = etDescView.getHeight();</span><br><span class="line"> </span><br><span class="line">            <span class="keyword">int</span> differ = focusViewTop + itemHeight - invisibleHeight;</span><br><span class="line">            <span class="keyword">if</span> (differ &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="comment">// 让RecyclerView滚动差的那点距离</span></span><br><span class="line">                mRecyclerview.scrollBy(<span class="number">0</span>, differ);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>RecyclerView</tag>
+        <tag>EditText</tag>
+      </tags>
   </entry>
   <entry>
     <title>Mac下完全卸载干净Android Studio</title>
@@ -147,6 +162,13 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rm -Rf ~/Library/Android*</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>Mac</category>
+      </categories>
+      <tags>
+        <tag>卸载</tag>
+        <tag>APP</tag>
+      </tags>
   </entry>
   <entry>
     <title>HTTP 响应代码</title>
@@ -302,6 +324,13 @@
 <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/511" target="_blank" rel="noopener"><code>511 Network Authentication Required</code></a></p>
 <p>511 状态码指示客户端需要进行身份验证才能获得网络访问权限。</p>
 ]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>TCP</tag>
+        <tag>HTTP</tag>
+      </tags>
   </entry>
   <entry>
     <title>Android 解决 API &#39;variantOutput.getPackageApplication()&#39; is obsolete</title>
@@ -338,6 +367,12 @@
 <figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">applicationVariants.all &#123; variant -&gt;</span><br><span class="line">    variant.outputs.each &#123; output -&gt;</span><br><span class="line">        variant.packageApplicationProvider.get().outputDirectory = <span class="keyword">new</span> File(project.rootDir.absolutePath + <span class="string">"/apk"</span>)</span><br><span class="line">        <span class="keyword">def</span> fileName = <span class="string">"app-v$&#123;defaultConfig.versionName&#125;-release.apk"</span></span><br><span class="line">        output.outputFileName = fileName</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>bug</tag>
+      </tags>
   </entry>
   <entry>
     <title>Markdown基本语法</title>
