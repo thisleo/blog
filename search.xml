@@ -336,7 +336,7 @@
     <title>Android 解决 API &#39;variantOutput.getPackageApplication()&#39; is obsolete</title>
     <url>/2020/04/16/Android-%E8%A7%A3%E5%86%B3-API-variantOutput-getPackageApplication-is-obsolete/</url>
     <content><![CDATA[<p><strong>Gradle升级3.2.1以后打包提示一个警告:</strong></p>
-<p><img src="http://img.dopobo.com/img/20200324142033.png" alt=""></p>
+<p><img src="https://gitee.com/cdyiwhy/imgbed/raw/master/img/20200720090126.png" alt=""></p>
 <p>根据字面意思<code>variantOutput.getPackageApplication()</code> 这个方法废弃了, 但是项目中全局搜索这个关键词没有找到调用这个方法, 最后是因为下面这段代码:</p>
 <a id="more"></a>
 
