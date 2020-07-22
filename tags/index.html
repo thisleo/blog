@@ -13,11 +13,12 @@
 <link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"matlab.xyz","root":"/","scheme":"Gemini","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"matlab.xyz","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta property="og:type" content="website">
@@ -112,30 +113,30 @@
 
 
 <nav class="site-nav">
-  <ul id="menu" class="menu">
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -154,7 +155,7 @@
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off"
            placeholder="搜索..." spellcheck="false"
            type="search" class="search-input">
   </div>
@@ -184,10 +185,9 @@
   
   
 
-          <div class="content page">
+          <div class="content page posts-expand">
             
 
-  <div class="posts-expand">
     
     
     
@@ -213,7 +213,7 @@
               目前共计 10 个标签
             </div>
             <div class="tag-cloud-tags">
-              <a href="/tags/360%E5%8A%A0%E5%9B%BA/" style="font-size: 12px; color: #ccc">360加固</a> <a href="/tags/APP/" style="font-size: 12px; color: #ccc">APP</a> <a href="/tags/EditText/" style="font-size: 12px; color: #ccc">EditText</a> <a href="/tags/Gradle/" style="font-size: 12px; color: #ccc">Gradle</a> <a href="/tags/HTTP/" style="font-size: 12px; color: #ccc">HTTP</a> <a href="/tags/RecyclerView/" style="font-size: 12px; color: #ccc">RecyclerView</a> <a href="/tags/TCP/" style="font-size: 12px; color: #ccc">TCP</a> <a href="/tags/Walle/" style="font-size: 12px; color: #ccc">Walle</a> <a href="/tags/bug/" style="font-size: 12px; color: #ccc">bug</a> <a href="/tags/%E5%8D%B8%E8%BD%BD/" style="font-size: 12px; color: #ccc">卸载</a>
+              <a href="/tags/360%E5%8A%A0%E5%9B%BA/" style="font-size: 12px; color: #ccc">360加固</a> <a href="/tags/APP/" style="font-size: 12px; color: #ccc">APP</a> <a href="/tags/EditText/" style="font-size: 12px; color: #ccc">EditText</a> <a href="/tags/Gradle/" style="font-size: 12px; color: #ccc">Gradle</a> <a href="/tags/HTTP/" style="font-size: 12px; color: #ccc">HTTP</a> <a href="/tags/RecyclerView/" style="font-size: 12px; color: #ccc">RecyclerView</a> <a href="/tags/TCP/" style="font-size: 12px; color: #ccc">TCP</a> <a href="/tags/Walle/" style="font-size: 12px; color: #ccc">Walle</a> <a href="/tags/bug/" style="font-size: 30px; color: #111">bug</a> <a href="/tags/%E5%8D%B8%E8%BD%BD/" style="font-size: 12px; color: #ccc">卸载</a>
             </div>
           </div>
         
@@ -227,7 +227,6 @@
     
     
     
-  </div>
 
 
           </div>
@@ -302,14 +301,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -348,7 +347,7 @@
   &copy; 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Chendy</span>
 </div>
@@ -390,6 +389,8 @@
 
   
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 

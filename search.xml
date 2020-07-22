@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo使用Fancybox问题记录</title>
+    <url>/2020/07/22/Hexo%E4%BD%BF%E7%94%A8Fancybox%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<blockquote>
+<p>搭建完成自己的Hexo博客后, 发现图片没有点击放大浏览的功能, 这怎么行!  看到<a href="https://github.com/fancyapps/fancybox" target="_blank" rel="noopener">Fancybox</a>还不错, 于是安装fancybox3, 但是安装完成使用后, 发现整个博客都变成空白的了, 看不到文章了, 经过问题排查发现了问题所在,特此记录下来</p>
+</blockquote>
+<h4 id="Fancybox安装"><a href="#Fancybox安装" class="headerlink" title="Fancybox安装"></a>Fancybox安装</h4><p>使用的主题是<code>next</code>, 其他主题没有用过, 原理应该一样</p>
+<ul>
+<li><p>切换到主题<code>lib</code>目录</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> theme/next/<span class="built_in">source</span>/lib</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>下载插件</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/theme-next-fancybox3 fancybox</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改主题配置文件`_config.yml</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">fancybox: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<a id="more"></a>
+
+<p>  <strong>这里有坑↑</strong></p>
+<p>  <img src="https://gitee.com/cdyiwhy/imgbed/raw/master/img/20200722133935.png" alt=""></p>
+<p>  <img src="https://gitee.com/cdyiwhy/imgbed/raw/master/img/20200722133949.png" alt=""></p>
+<h4 id="问题出现"><a href="#问题出现" class="headerlink" title="问题出现"></a>问题出现</h4><p>​        根据网上的博客看到只需要在<code>themes/next/source/lib/</code>中下载<a href="https://github.com/fancyapps/fancybox" target="_blank" rel="noopener">Fancybox</a> 然后在主题下的<code>_config.yml</code>中找到<code>fancybox</code>设置为<code>true</code>就可以了, 但是设置完成后发现,博客整个都是空白,并且网页有报错提示</p>
+<p><img src="https://gitee.com/cdyiwhy/imgbed/raw/master/img/20200722132018.png" alt=""></p>
+<p>根据错误提示发现是<code>js</code>没有导入的问题</p>
+<p><img src="https://gitee.com/cdyiwhy/imgbed/raw/master/img/20200722132138.png" alt=""></p>
+<p>网上搜索问题都只是介绍将<code>theme/next/_config.yml</code>下的<code>fancybox</code>设置为<code>true</code>, 却没有提示导入<code>js</code>文件, 纠结了好长时间</p>
+<h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><p>通过查看<a href="https://github.com/theme-next/theme-next-fancybox3" target="_blank" rel="noopener">theme-next-fancybox3</a>的使用方法发现了</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">vendors:</span><br><span class="line">  ...</span><br><span class="line">  fancybox: <span class="comment">//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js</span></span><br><span class="line">  fancybox_css: <span class="comment">//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css</span></span><br></pre></td></tr></table></figure>
+
+<p>然后回头看<code>theme/next/_config.yml</code>中发现还有一段注释</p>
+<p><img src="https://gitee.com/cdyiwhy/imgbed/raw/master/img/20200722132746.png" alt=""></p>
+<p>好像找到解决方法了, 试了下将这里注释掉,放开cdn的注释</p>
+<p><img src="https://gitee.com/cdyiwhy/imgbed/raw/master/img/20200722132646.png" alt=""></p>
+<p>然后就OK了, 记录下帮助后人</p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>bug</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>360加固 + 美团Walle多渠道自动化打包</title>
     <url>/2020/04/16/360%E5%8A%A0%E5%9B%BA-%E7%BE%8E%E5%9B%A2Walle%E5%A4%9A%E6%B8%A0%E9%81%93%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85/</url>
     <content><![CDATA[<p>使用美团<a href="https://github.com/Meituan-Dianping/walle" target="_blank" rel="noopener">walle</a>进行多渠道打包可以节省大量的时间, 但是使用中发现一个问题:</p>
