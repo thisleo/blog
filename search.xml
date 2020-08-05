@@ -1,6 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Moshi配合Retrofit在Kotlin中的使用</title>
+    <url>/2020/08/05/Moshi%E9%85%8D%E5%90%88Retrofit%E5%9C%A8Kotlin%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<blockquote>
+<p>本文将展示如何在Android项目中使用Moshi（代替Gson的项目）配合Retrofit实现Json解析</p>
+</blockquote>
+<p>首先，你为什么要使用Moshi代替Gson呢？</p>
+<p><a href="https://www.reddit.com/r/androiddev/comments/684flw/why_use_moshi_over_gson/" target="_blank" rel="noopener">https://www.reddit.com/r/androiddev/comments/684flw/why_use_moshi_over_gson/</a></p>
+<h3 id="如何在Kotlin中使用Retrofit和Moshi？"><a href="#如何在Kotlin中使用Retrofit和Moshi？" class="headerlink" title="如何在Kotlin中使用Retrofit和Moshi？"></a>如何在Kotlin中使用Retrofit和Moshi？</h3><ol>
+<li><p>添加依赖（Dependencies）</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    implementation <span class="string">"com.squareup.retrofit2:converter-moshi:2.4.0"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：如果你仅仅在<code>Retrofit</code>中使用<code>Gson</code>，记得移除<code>Gson</code>的依赖</p>
+<a id="more"></a></li>
+<li><p>添加Moshi转换到<code>Retrofit</code>中</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> retrofit = Retrofit.Builder()</span><br><span class="line">        .baseUrl(<span class="string">"https://api.example.com"</span>)</span><br><span class="line">        .addConverterFactory(MoshiConverterFactory.create())</span><br><span class="line">        .build()</span><br></pre></td></tr></table></figure>
+
+<p>注意：需要在<code>Retrofit</code>初始化的地方实现<code>Moshi</code>的转换工厂方法，用来代替<code>.addConverterFactory(MoshiConverterFactory.create())</code>。</p>
+<p>不要忘记移除<code>GsonConverterFactory</code></p>
+</li>
+<li><p>更新你的网络数据</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">data</span> <span class="class"><span class="keyword">class</span> <span class="title">UserEntity</span></span>(<span class="meta">@field:Json</span>(name = <span class="string">"id"</span>) <span class="keyword">val</span> id: String,</span><br><span class="line">                      <span class="meta">@field:Json</span>(name = <span class="string">"name"</span>) <span class="keyword">val</span> name: String)</span><br></pre></td></tr></table></figure>
+
+<p>注意：Moshi中的<code>@Json</code>等效于Gson中的<code>@SerializedName</code>，不要忘记将<code>@SerializedName</code>替换为<code>@Json</code>。</p>
+<p>为了防止因为混淆造成数据不可用，最好使用注释（即使变量的名称与JSON Key相同）</p>
+<p><strong>本文只是简单介绍了Moshi，更多功能请前往<a href="https://github.com/square/moshi" target="_blank" rel="noopener">Moshi主页</a>查看</strong></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Moshi</tag>
+        <tag>Kotlin</tag>
+        <tag>Retrofit</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo使用Fancybox问题记录</title>
     <url>/2020/07/22/Hexo%E4%BD%BF%E7%94%A8Fancybox%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<blockquote>
