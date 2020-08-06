@@ -21,7 +21,7 @@
 <p>不要忘记移除<code>GsonConverterFactory</code></p>
 </li>
 <li><p>更新你的网络数据</p>
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">data</span> <span class="class"><span class="keyword">class</span> <span class="title">UserEntity</span></span>(<span class="meta">@Json(name = <span class="meta-string">"id"</span>)</span> <span class="keyword">val</span> id: String,</span><br><span class="line">                      <span class="meta">@Json(name = <span class="meta-string">"name"</span>)</span> <span class="keyword">val</span> name: String)</span><br></pre></td></tr></table></figure>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">data</span> <span class="class"><span class="keyword">class</span> <span class="title">UserEntity</span></span>(<span class="meta">@field:Json</span>(name = <span class="string">"id"</span>) <span class="keyword">val</span> id: String,</span><br><span class="line">                      <span class="meta">@field:Json</span>(name = <span class="string">"name"</span>) <span class="keyword">val</span> name: String)</span><br></pre></td></tr></table></figure>
 
 <p>注意：Moshi中的<code>@Json</code>等效于Gson中的<code>@SerializedName</code>，不要忘记将<code>@SerializedName</code>替换为<code>@Json</code>。</p>
 <p>为了防止因为混淆造成数据不可用，最好使用注释（即使变量的名称与JSON Key相同）</p>
