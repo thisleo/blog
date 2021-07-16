@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://gitee.com/cdyiwhy/imgbed/raw/master/img/20210716110624.png">
 <meta property="og:image" content="https://gitee.com/cdyiwhy/imgbed/raw/master/img/20210716110625.png">
 <meta property="article:published_time" content="2021-07-16T02:51:43.000Z">
-<meta property="article:modified_time" content="2021-07-16T03:14:07.983Z">
+<meta property="article:modified_time" content="2021-07-16T03:45:50.013Z">
 <meta property="article:author" content="Chendy">
 <meta property="article:tag" content="context">
 <meta name="twitter:card" content="summary">
@@ -219,7 +219,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-07-16 10:51:43 / 修改时间：11:14:07" itemprop="dateCreated datePublished" datetime="2021-07-16T10:51:43+08:00">2021-07-16</time>
+              <time title="创建时间：2021-07-16 10:51:43 / 修改时间：11:45:50" itemprop="dateCreated datePublished" datetime="2021-07-16T10:51:43+08:00">2021-07-16</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -252,7 +252,6 @@
         <h1 id="1-Context概念"><a href="#1-Context概念" class="headerlink" title="1. Context概念"></a>1. Context概念</h1><p>在加载资源、启动一个新的Activity、获取系统服务、获取内部文件（夹）路径、创建View操作时等都需要Context的参与,<br>Context字面意思上下文，或者叫做场景，也就是用户与操作系统操作的一个过程，比如你打电话，场景包括电话程序对应的界面，以及隐藏在背后的数据</p>
 <a id="more"></a>
 
-
 <p>可以看到Activity、Service、Application都是Context的子类；</p>
 <p>也就是说，Android系统的角度来理解：Context是一个场景，代表与操作系统的交互的一种过程。从程序的角度上来理解：Context是个抽象类，而Activity、Service、Application等都是该类的一个实现。</p>
 <p>在仔细看一下上图：Activity、Service、Application都是继承自ContextWrapper，而ContextWrapper内部会包含一个base context，由这个base context去实现了绝大多数的方法。</p>
@@ -262,13 +261,14 @@
 <p>下面开始介绍在使用Context时，需要注意的问题。</p>
 <h1 id="3-引用的保持"><a href="#3-引用的保持" class="headerlink" title="3. 引用的保持"></a>3. 引用的保持</h1><p>大家在编写一些类时，例如工具类，可能会编写成单例的方式，这些工具类大多需要去访问资源，也就说需要Context的参与。<br>在这样的情况下，就需要注意Context的引用问题。</p>
 <p>例如以下的写法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.mooc.shader.roundimageview;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> android.content.Context;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CustomManager</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> CustomManager sInstance;</span><br><span class="line">	<span class="keyword">private</span> Context mContext;</span><br><span class="line"> </span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="title">CustomManager</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.mContext = context;</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> CustomManager <span class="title">getInstance</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (sInstance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            sInstance = <span class="keyword">new</span> CustomManager(context);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sInstance;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//some methods </span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">someOtherMethodNeedContext</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.mooc.shader.roundimageview;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> android.content.Context;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CustomManager</span> </span>&#123;</span><br><span class="line">  </span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> CustomManager sInstance;</span><br><span class="line">	<span class="keyword">private</span> Context mContext;</span><br><span class="line"> </span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="title">CustomManager</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.mContext = context;</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> CustomManager <span class="title">getInstance</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (sInstance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            sInstance = <span class="keyword">new</span> CustomManager(context);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sInstance;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//some methods </span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">someOtherMethodNeedContext</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>对于上述的单例，大家应该都不陌生（请别计较getInstance的效率问题），内部保持了一个Context的引用；<br>这么写是没有问题的，问题在于，这个Context哪来的我们不能确定，很大的可能性，你在某个Activity里面为了方便，直接传了个this;这样问题就来了，我们的这个类中的sInstance是一个static且强引用的，在其内部引用了一个Activity作为Context，也就是说，我们的这个Activity只要我们的项目活着，就没有办法进行内存回收。而我们的Activity的生命周期肯定没这么长，所以造成了内存泄漏。</p>
 <p>那么，我们如何才能避免这样的问题呢？</p>
 <p>有人会说，我们可以软引用，嗯，软引用，假如被回收了，你不怕NullPointException么。</p>
 <p>把上述代码做下修改：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> CustomManager <span class="title">getInstance</span><span class="params">(Context context)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (sInstance == <span class="keyword">null</span>) &#123;</span><br><span class="line">        sInstance = <span class="keyword">new</span> CustomManager(context.getApplicationContext());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sInstance;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>这样，我们就解决了内存泄漏的问题，因为我们引用的是一个ApplicationContext，它的生命周期和我们的单例对象一致。<br>这样的话，可能有人会说，早说嘛，那我们以后都这么用不就行了，很遗憾的说，不行。上面我们已经说过，Context和Application Context的区别是很大的，也就是说，他们的应用场景（你也可以认为是能力）是不同的，并非所有Activity为Context的场景，Application Context都能搞定。</p>
 <p>下面就开始介绍各种Context的应用场景。</p>
 <h1 id="4-Context的应用场景"><a href="#4-Context的应用场景" class="headerlink" title="4. Context的应用场景"></a>4. Context的应用场景</h1><p><img src="https://gitee.com/cdyiwhy/imgbed/raw/master/img/20210716110625.png" alt=""></p>
@@ -302,7 +302,10 @@
     <a href="/2020/08/05/Moshi%E9%85%8D%E5%90%88Retrofit%E5%9C%A8Kotlin%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8/" rel="prev" title="Moshi配合Retrofit在Kotlin中的使用">
       <i class="fa fa-chevron-left"></i> Moshi配合Retrofit在Kotlin中的使用
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/07/16/Hexo%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" rel="next" title="Hexo使用说明">
+      Hexo使用说明 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -386,7 +389,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -399,7 +402,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

@@ -1,11 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo使用说明</title>
+    <url>/2021/07/16/Hexo%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</url>
+    <content><![CDATA[<h4 id="新建一篇文章"><a href="#新建一篇文章" class="headerlink" title="新建一篇文章"></a>新建一篇文章</h4><p>（1）在hexo博客目录下，进入Git Bash命令窗口中，输入以下命令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new post "Hexo使用说明"</span><br></pre></td></tr></table></figure>
+
+<p>（2）在博客目录下的/source/_posts/ 文件夹下，可以看到已经生成了标题为(在这里.md)的博客文件：<br>如图所示：</p>
+<p><img src="http://img.dopobo.com/img/20210716132233.png" alt=""></p>
+<p>（3）在（Hexo使用说明.md）文件中编辑自己的博客文章即可。<br>注意：Hexo 发布的文章是 Markdown 格式的文件， Markdown 基本语法的网址：<a href="http://www.markdown.cn/" target="_blank" rel="noopener">点这里前往</a></p>
+<a id="more"></a>  
+
+
+<h4 id="2、给文章添加分类和标签"><a href="#2、给文章添加分类和标签" class="headerlink" title="2、给文章添加分类和标签"></a>2、给文章添加分类和标签</h4><p>(1) 在（在这里.md）文件中设置tags和categories属性：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">title: 在这里</span><br><span class="line">date: 2018-08-02 11:41:10</span><br><span class="line">tags:</span><br><span class="line">- 博客           &#x2F;&#x2F;多个标签可以这样添加</span><br><span class="line">- hexo</span><br><span class="line">categories: web前端</span><br></pre></td></tr></table></figure>
+
+<p>如图所示：</p>
+<p><img src="http://img.dopobo.com/img/20210716132451.png" alt=""></p>
+<h4 id="3、启动服务器，本地测试"><a href="#3、启动服务器，本地测试" class="headerlink" title="3、启动服务器，本地测试"></a>3、启动服务器，本地测试</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>如图所示：</p>
+<p><img src="http://img.dopobo.com/img/20210716132538.png" alt=""></p>
+<h4 id="4、添加“阅读全文”按钮"><a href="#4、添加“阅读全文”按钮" class="headerlink" title="4、添加“阅读全文”按钮"></a>4、添加“阅读全文”按钮</h4><p>方法一：在文章任意你想添加的位置添加即可</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
+
+<p>|例如：<br>在这里.md里面的内容是：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 在这里</span><br><span class="line">date: 2018-08-02 11:41:10</span><br><span class="line">tags:</span><br><span class="line">- 博客</span><br><span class="line">- hexo</span><br><span class="line">categories: web前端</span><br><span class="line">---</span><br><span class="line">javascript是一门充满活力、简单易用的语言，又是一门具有许多复杂微妙技术的语言。即使是经验丰富的javascript开发者，如果没有认真学习的话，也无法真正理解它们，这就是javascript的矛盾之处。由于javascript不必理解就可以使用，因此通常来说很难真正理解语言本身，这就是我们面临的挑战。不满足于只是让代码正常工作，而是想要弄清楚为什么，勇于挑战这条崎岖颠簸的少有人走的路，拥抱整个javascript</span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line">后面的内容在首页不显示，只显示到&lt;!--more--&gt;这里</span><br></pre></td></tr></table></figure>
+
+<p>在页面中显示的效果是：</p>
+<p><img src="https://gitee.com/cdyiwhy/imgbed/raw/master/img/20210716131551.png" alt=""></p>
+<p>方法二：设置首页文章以摘要形式显示，打开主题配置文件，找到auto_excerpt进行修改：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">auto_excerpt:</span><br><span class="line">  enable: true</span><br><span class="line">  length: 150</span><br></pre></td></tr></table></figure>
+
+<p>其中length代表显示摘要的截取字符长度。<br>注：这两种方法，在博客首页显示的效果不一样，根据自己的需要，选择自己喜欢的方法</p>
+<h4 id="5、在博文中添加图片"><a href="#5、在博文中添加图片" class="headerlink" title="5、在博文中添加图片"></a>5、在博文中添加图片</h4><p>方法一：<br>(1)在hexo目录下，安装插件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+
+<p>|(2)在hexo\source 目录下新建一个img文件夹，把图片放置在里面；<br>(3)在xxx.md文件中引用图片：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![header]( img&#x2F;header.jpg)</span><br></pre></td></tr></table></figure>
+
+<p>|方法二：<br>(1)在全局配置文件（hexo/_config.yml)中将post_asset_folder设置为true；<br>(2)创建文章（在创建的时候，会在hexo/source/_post目录下，生成一个XXX.md文件和一个XXX的文件夹）：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new &quot;XXX&quot;</span><br></pre></td></tr></table></figure>
+
+<p>|(3)把XXX这个博文需要展示的图片放在XXX文件夹目录下；<br>(4)在XXX.md文件中引入图片的方式：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% asset_img example.jpg This is an example image %&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="6、发布到Github上"><a href="#6、发布到Github上" class="headerlink" title="6、发布到Github上"></a>6、发布到Github上</h4><p>（1）发表的文章在本地预览无误后，在 Git Bash 命令窗口执行以下命令：6、发布到Github上</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+<p>（2）在浏览器，访问自己的博客域名，即可看到刚 发布的文章</p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Context上下文</title>
     <url>/2021/07/16/Context%E4%B8%8A%E4%B8%8B%E6%96%87/</url>
     <content><![CDATA[<h1 id="1-Context概念"><a href="#1-Context概念" class="headerlink" title="1. Context概念"></a>1. Context概念</h1><p>在加载资源、启动一个新的Activity、获取系统服务、获取内部文件（夹）路径、创建View操作时等都需要Context的参与,<br>Context字面意思上下文，或者叫做场景，也就是用户与操作系统操作的一个过程，比如你打电话，场景包括电话程序对应的界面，以及隐藏在背后的数据</p>
 <a id="more"></a>
-
 
 <p>可以看到Activity、Service、Application都是Context的子类；</p>
 <p>也就是说，Android系统的角度来理解：Context是一个场景，代表与操作系统的交互的一种过程。从程序的角度上来理解：Context是个抽象类，而Activity、Service、Application等都是该类的一个实现。</p>
@@ -16,13 +74,14 @@
 <p>下面开始介绍在使用Context时，需要注意的问题。</p>
 <h1 id="3-引用的保持"><a href="#3-引用的保持" class="headerlink" title="3. 引用的保持"></a>3. 引用的保持</h1><p>大家在编写一些类时，例如工具类，可能会编写成单例的方式，这些工具类大多需要去访问资源，也就说需要Context的参与。<br>在这样的情况下，就需要注意Context的引用问题。</p>
 <p>例如以下的写法：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.mooc.shader.roundimageview;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> android.content.Context;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CustomManager</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> CustomManager sInstance;</span><br><span class="line">	<span class="keyword">private</span> Context mContext;</span><br><span class="line"> </span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="title">CustomManager</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.mContext = context;</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> CustomManager <span class="title">getInstance</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (sInstance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            sInstance = <span class="keyword">new</span> CustomManager(context);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sInstance;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//some methods </span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">someOtherMethodNeedContext</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.mooc.shader.roundimageview;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> android.content.Context;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CustomManager</span> </span>&#123;</span><br><span class="line">  </span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> CustomManager sInstance;</span><br><span class="line">	<span class="keyword">private</span> Context mContext;</span><br><span class="line"> </span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="title">CustomManager</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.mContext = context;</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> CustomManager <span class="title">getInstance</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (sInstance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            sInstance = <span class="keyword">new</span> CustomManager(context);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sInstance;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//some methods </span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">someOtherMethodNeedContext</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>对于上述的单例，大家应该都不陌生（请别计较getInstance的效率问题），内部保持了一个Context的引用；<br>这么写是没有问题的，问题在于，这个Context哪来的我们不能确定，很大的可能性，你在某个Activity里面为了方便，直接传了个this;这样问题就来了，我们的这个类中的sInstance是一个static且强引用的，在其内部引用了一个Activity作为Context，也就是说，我们的这个Activity只要我们的项目活着，就没有办法进行内存回收。而我们的Activity的生命周期肯定没这么长，所以造成了内存泄漏。</p>
 <p>那么，我们如何才能避免这样的问题呢？</p>
 <p>有人会说，我们可以软引用，嗯，软引用，假如被回收了，你不怕NullPointException么。</p>
 <p>把上述代码做下修改：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> CustomManager <span class="title">getInstance</span><span class="params">(Context context)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (sInstance == <span class="keyword">null</span>) &#123;</span><br><span class="line">        sInstance = <span class="keyword">new</span> CustomManager(context.getApplicationContext());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sInstance;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>这样，我们就解决了内存泄漏的问题，因为我们引用的是一个ApplicationContext，它的生命周期和我们的单例对象一致。<br>这样的话，可能有人会说，早说嘛，那我们以后都这么用不就行了，很遗憾的说，不行。上面我们已经说过，Context和Application Context的区别是很大的，也就是说，他们的应用场景（你也可以认为是能力）是不同的，并非所有Activity为Context的场景，Application Context都能搞定。</p>
 <p>下面就开始介绍各种Context的应用场景。</p>
 <h1 id="4-Context的应用场景"><a href="#4-Context的应用场景" class="headerlink" title="4. Context的应用场景"></a>4. Context的应用场景</h1><p><img src="https://gitee.com/cdyiwhy/imgbed/raw/master/img/20210716110625.png" alt=""></p>
