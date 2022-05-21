@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Github SSH 部署Hexo</title>
-    <url>/2022/05/21/Github-SSH-%E9%83%A8%E7%BD%B2Hexo/</url>
+    <url>/posts/50243.html</url>
     <content><![CDATA[<p> <strong>使用Github SSH Key来避免Hexo部署时输入账户密码</strong></p>
 <blockquote>
 <p>当hexo使用https方式连接Github时，每次执行hexo deploy都会提示你输入账户和密码，不胜其烦。下面使用ssh连接方式可以免除每次输入账户密码的过程，而且安全可靠。</p>
@@ -23,7 +23,7 @@
   </entry>
   <entry>
     <title>Hexo使用说明</title>
-    <url>/2021/07/16/Hexo%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</url>
+    <url>/posts/32887.html</url>
     <content><![CDATA[<h4 id="新建一篇文章"><a href="#新建一篇文章" class="headerlink" title="新建一篇文章"></a>新建一篇文章</h4><p>（1）在hexo博客目录下，进入Git Bash命令窗口中，输入以下命令：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new post "Hexo使用说明"</span><br></pre></td></tr></table></figure>
 
@@ -82,7 +82,7 @@
   </entry>
   <entry>
     <title>Context上下文</title>
-    <url>/2021/07/16/Context%E4%B8%8A%E4%B8%8B%E6%96%87/</url>
+    <url>/posts/54343.html</url>
     <content><![CDATA[<h1 id="1-Context概念"><a href="#1-Context概念" class="headerlink" title="1. Context概念"></a>1. Context概念</h1><p>在加载资源、启动一个新的Activity、获取系统服务、获取内部文件（夹）路径、创建View操作时等都需要Context的参与,<br>Context字面意思上下文，或者叫做场景，也就是用户与操作系统操作的一个过程，比如你打电话，场景包括电话程序对应的界面，以及隐藏在背后的数据</p>
 <a id="more"></a>
 
@@ -123,7 +123,7 @@
   </entry>
   <entry>
     <title>Moshi配合Retrofit在Kotlin中的使用</title>
-    <url>/2020/08/05/Moshi%E9%85%8D%E5%90%88Retrofit%E5%9C%A8Kotlin%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <url>/posts/9144.html</url>
     <content><![CDATA[<blockquote>
 <p>本文将展示如何在Android项目中使用Moshi（代替Gson的项目）配合Retrofit实现Json解析</p>
 </blockquote>
@@ -161,7 +161,7 @@
   </entry>
   <entry>
     <title>Hexo使用Fancybox问题记录</title>
-    <url>/2020/07/22/Hexo%E4%BD%BF%E7%94%A8Fancybox%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
+    <url>/posts/59322.html</url>
     <content><![CDATA[<blockquote>
 <p>搭建完成自己的Hexo博客后, 发现图片没有点击放大浏览的功能, 这怎么行!  看到<a href="https://github.com/fancyapps/fancybox" target="_blank" rel="noopener">Fancybox</a>还不错, 于是安装fancybox3, 但是安装完成使用后, 发现整个博客都变成空白的了, 看不到文章了, 经过问题排查发现了问题所在,特此记录下来</p>
 </blockquote>
@@ -206,7 +206,7 @@
   </entry>
   <entry>
     <title>360加固 + 美团Walle多渠道自动化打包</title>
-    <url>/2020/04/16/360%E5%8A%A0%E5%9B%BA-%E7%BE%8E%E5%9B%A2Walle%E5%A4%9A%E6%B8%A0%E9%81%93%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85/</url>
+    <url>/posts/26621.html</url>
     <content><![CDATA[<p>使用美团<a href="https://github.com/Meituan-Dianping/walle" target="_blank" rel="noopener">walle</a>进行多渠道打包可以节省大量的时间, 但是使用中发现一个问题:</p>
 <p><em>之前是使用walle打多渠道包, 然后将apk上传360进行加固; 后来发现加固之后的APP没有了渠道信息, 并且发现360加固完成后的自动重签名只有V1签名</em></p>
 <p>因此需要我们自己手动重签名, 需要调整实现流程: <strong>加固——重签名——多渠道打包</strong></p>
@@ -332,7 +332,7 @@
   </entry>
   <entry>
     <title>RecyclerView中的EditText被软键盘遮挡的解决办法</title>
-    <url>/2020/04/16/RecyclerView%E4%B8%AD%E7%9A%84EditText%E8%A2%AB%E8%BD%AF%E9%94%AE%E7%9B%98%E9%81%AE%E6%8C%A1%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+    <url>/posts/59393.html</url>
     <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"> </span><br><span class="line">getWindow().getDecorView().getViewTreeObserver().addOnGlobalLayoutListener(<span class="keyword">new</span> ViewTreeObserver.OnGlobalLayoutListener() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onGlobalLayout</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        mImgKeyboard.setImageResource(KeyboardUtils.isSoftShowing(ForumsPublishPostActivity.<span class="keyword">this</span>)</span><br><span class="line">                ? R.mipmap.jianpan_down_ico : R.mipmap.jianpan_ico);</span><br><span class="line"> </span><br><span class="line">        <span class="comment">// 除了软键盘以外的可见区域</span></span><br><span class="line">        Rect rect = <span class="keyword">new</span> Rect();</span><br><span class="line">        getWindow().getDecorView().getWindowVisibleDisplayFrame(rect);</span><br><span class="line">        <span class="comment">// 计算出剩余高度：  除了状态栏高度、topBar高度、bottomBar高度、键盘高度的剩余高度</span></span><br><span class="line">        <span class="keyword">int</span> invisibleHeight = rect.bottom</span><br><span class="line">                - ViewUtils.getSystemBarHeight(ForumsPublishPostActivity.<span class="keyword">this</span>)</span><br><span class="line">                - ViewUtils.dp2px(ForumsPublishPostActivity.<span class="keyword">this</span>, <span class="number">44</span>)</span><br><span class="line">                - ViewUtils.dp2px(ForumsPublishPostActivity.<span class="keyword">this</span>, <span class="number">44</span>);</span><br><span class="line"> </span><br><span class="line">        <span class="comment">// 计算出所点击的图片描述的EditText距离RecyclerView顶部的距离</span></span><br><span class="line">        View etDescView = mRecyclerview.getLayoutManager().findViewByPosition(mAdapter.etFocusPosition);</span><br><span class="line">        <span class="keyword">if</span> (etDescView != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> focusViewTop = etDescView.getTop();</span><br><span class="line">            <span class="keyword">int</span> itemHeight = etDescView.getHeight();</span><br><span class="line"> </span><br><span class="line">            <span class="keyword">int</span> differ = focusViewTop + itemHeight - invisibleHeight;</span><br><span class="line">            <span class="keyword">if</span> (differ &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="comment">// 让RecyclerView滚动差的那点距离</span></span><br><span class="line">                mRecyclerview.scrollBy(<span class="number">0</span>, differ);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 ]]></content>
@@ -346,7 +346,7 @@
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/2020/04/16/hello-world/</url>
+    <url>/posts/16107.html</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <a id="more"></a>
 
@@ -367,7 +367,7 @@
   </entry>
   <entry>
     <title>Mac下完全卸载干净Android Studio</title>
-    <url>/2020/04/16/Mac%E4%B8%8B%E5%AE%8C%E5%85%A8%E5%8D%B8%E8%BD%BD%E5%B9%B2%E5%87%80Android-Studio/</url>
+    <url>/posts/62816.html</url>
     <content><![CDATA[<p>第一步： 卸载Android Studio应用及相关配置</p>
 <p>在终端中输入：</p>
 <a id="more"></a>
@@ -397,7 +397,7 @@
   </entry>
   <entry>
     <title>HTTP 响应代码</title>
-    <url>/2020/04/16/HTTP-%E5%93%8D%E5%BA%94%E4%BB%A3%E7%A0%81/</url>
+    <url>/posts/64104.html</url>
     <content><![CDATA[<blockquote>
 <blockquote>
 <blockquote>
@@ -559,7 +559,7 @@
   </entry>
   <entry>
     <title>Android 解决 API &#39;variantOutput.getPackageApplication()&#39; is obsolete</title>
-    <url>/2020/04/16/Android-%E8%A7%A3%E5%86%B3-API-variantOutput-getPackageApplication-is-obsolete/</url>
+    <url>/posts/36011.html</url>
     <content><![CDATA[<p><strong>Gradle升级3.2.1以后打包提示一个警告:</strong></p>
 <p><img src="https://gitee.com/cdyiwhy/imgbed/raw/master/img/20200720090126.png" alt=""></p>
 <p>根据字面意思<code>variantOutput.getPackageApplication()</code> 这个方法废弃了, 但是项目中全局搜索这个关键词没有找到调用这个方法, 最后是因为下面这段代码:</p>
@@ -601,7 +601,7 @@
   </entry>
   <entry>
     <title>Markdown基本语法</title>
-    <url>/2020/03/25/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
+    <url>/posts/18133.html</url>
     <content><![CDATA[<p>Markdown是一种纯文本格式的标记语言。通过简单的标记语法，它可以使普通文本内容具有一定的格式。</p>
 <p>相比WYSIWYG编辑器</p>
 <a id="more"></a>
