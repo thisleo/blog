@@ -28,18 +28,18 @@
 <meta property="og:site_name" content="程序元之路">
 <meta property="og:description" content="使用美团walle进行多渠道打包可以节省大量的时间, 但是使用中发现一个问题: 之前是使用walle打多渠道包, 然后将apk上传360进行加固; 后来发现加固之后的APP没有了渠道信息, 并且发现360加固完成后的自动重签名只有V1签名 因此需要我们自己手动重签名, 需要调整实现流程: 加固——重签名——多渠道打包">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/cdyiwhy/imgbed/raw/master/img/20200310093427.png">
-<meta property="og:image" content="https://gitee.com/cdyiwhy/imgbed/raw/master/img/20200310092933.png">
-<meta property="og:image" content="https://gitee.com/cdyiwhy/imgbed/raw/master/img/20200310093055.png">
-<meta property="og:image" content="https://gitee.com/cdyiwhy/imgbed/raw/master/img/20200310093134.png">
+<meta property="og:image" content="http://matlab.xyz/imgs/360%E5%8A%A0%E5%9B%BA-%E7%BE%8E%E5%9B%A2Walle%E5%A4%9A%E6%B8%A0%E9%81%93%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85/20200310093427.png">
+<meta property="og:image" content="http://matlab.xyz/imgs/360%E5%8A%A0%E5%9B%BA-%E7%BE%8E%E5%9B%A2Walle%E5%A4%9A%E6%B8%A0%E9%81%93%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85/20200310092933.png">
+<meta property="og:image" content="http://matlab.xyz/imgs/360%E5%8A%A0%E5%9B%BA-%E7%BE%8E%E5%9B%A2Walle%E5%A4%9A%E6%B8%A0%E9%81%93%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85/20200310093055.png">
+<meta property="og:image" content="http://matlab.xyz/imgs/360%E5%8A%A0%E5%9B%BA-%E7%BE%8E%E5%9B%A2Walle%E5%A4%9A%E6%B8%A0%E9%81%93%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85/20200310093134.png">
 <meta property="article:published_time" content="2020-04-16T06:00:20.000Z">
-<meta property="article:modified_time" content="2020-04-16T06:16:25.000Z">
+<meta property="article:modified_time" content="2022-05-21T08:48:20.552Z">
 <meta property="article:author" content="Chendy">
 <meta property="article:tag" content="Walle">
 <meta property="article:tag" content="360加固">
 <meta property="article:tag" content="Gradle">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/cdyiwhy/imgbed/raw/master/img/20200310093427.png">
+<meta name="twitter:image" content="http://matlab.xyz/imgs/360%E5%8A%A0%E5%9B%BA-%E7%BE%8E%E5%9B%A2Walle%E5%A4%9A%E6%B8%A0%E9%81%93%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85/20200310093427.png">
 
 <link rel="canonical" href="http://matlab.xyz/2020/04/16/360%E5%8A%A0%E5%9B%BA-%E7%BE%8E%E5%9B%A2Walle%E5%A4%9A%E6%B8%A0%E9%81%93%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85/">
 
@@ -221,10 +221,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-04-16 14:00:20 / 修改时间：14:16:25" itemprop="dateCreated datePublished" datetime="2020-04-16T14:00:20+08:00">2020-04-16</time>
+              <time title="创建时间：2020-04-16 14:00:20" itemprop="dateCreated datePublished" datetime="2020-04-16T14:00:20+08:00">2020-04-16</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-05-21 16:48:20" itemprop="dateModified" datetime="2022-05-21T16:48:20+08:00">2022-05-21</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -263,7 +269,7 @@
 <p><strong>在此感谢原创作者：天子卿</strong></p>
 <p><strong>附作者文章链接：<a href="https://juejin.im/post/5c825ac6f265da2db9129bd0" target="_blank" rel="noopener">https://juejin.im/post/5c825ac6f265da2db9129bd0</a></strong></p>
 <p>通过作者文章完成此demo, 如有侵权,请联系删除</p>
-<p><img src="https://gitee.com/cdyiwhy/imgbed/raw/master/img/20200310093427.png" alt=""></p>
+<p><img src="/imgs/360%E5%8A%A0%E5%9B%BA-%E7%BE%8E%E5%9B%A2Walle%E5%A4%9A%E6%B8%A0%E9%81%93%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85/20200310093427.png" alt="20200310093427"></p>
 <blockquote>
 <blockquote>
 <blockquote>
@@ -326,17 +332,17 @@
 <hr>
 <h3 id="整体流程"><a href="#整体流程" class="headerlink" title="整体流程"></a>整体流程</h3><p>首先，将加固和打包操作封装成自动化操作，利用gradle脚本构建加固任务。</p>
 <p>为了代码解耦，我们不在app/build.gradle里面实现加固任务，而是重新建一个gradle文件來实现具体的加固和多渠道打包过程，在app/build.gradle只需要通过<code>apply from: &#39;×××.gradle&#39;</code>引用这个gradle文件即可，</p>
-<p><img src="https://gitee.com/cdyiwhy/imgbed/raw/master/img/20200310092933.png" alt=""></p>
+<p><img src="/imgs/360%E5%8A%A0%E5%9B%BA-%E7%BE%8E%E5%9B%A2Walle%E5%A4%9A%E6%B8%A0%E9%81%93%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85/20200310092933.png" alt="20200310092933"></p>
 <p>当需要修改加固的一些代码逻辑时，只需要在这个gradle文件里面修改。</p>
 <p>引入工具包。根据自己的系统环境，在<a href="http://jiagu.360.cn/#/global/download" target="_blank" rel="noopener">加固助手网页</a>选择对应的加固助手工具，下载后将里面的jiagu文件夹拷贝到自己项目的根目录下;</p>
 <p>在<a href="https://github.com/Meituan-Dianping/walle/tree/master/walle-cli" target="_blank" rel="noopener">walle-cli-jar下载链接</a>下载jar包到自己项目中。</p>
-<p><img src="https://gitee.com/cdyiwhy/imgbed/raw/master/img/20200310093055.png" alt=""></p>
+<p><img src="/imgs/360%E5%8A%A0%E5%9B%BA-%E7%BE%8E%E5%9B%A2Walle%E5%A4%9A%E6%B8%A0%E9%81%93%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85/20200310093055.png" alt="20200310093055"></p>
 <p>确定加固任务的时机。加固任务时机应该在release包生成之后，那么加固任务应该依赖于assembleRelease这个任务，并且设置在这个任务之后执行。</p>
 <p>接下来就是我们的基本流程了</p>
 <pre><code>1. 找到release包, 一般在`app/build/outputs/apk/release/`路径下
-2. 执行加固命令，将release包路径设置到命令中，并指定加固apk文件的输出路径
-3. 找到已加固的apk文件，对已加固apk文件进行对齐、重签名。（360已加固的apk文件会在原有的release文件名后面加上&quot;_jiagu&quot;）
-4. 找到重新签名的apk文件，执行多渠道打包命令。（重签名后的文件名是在原有文件名后面加上&quot;_sign&quot;）</code></pre><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">task assembleReinforceRelease() &#123;</span><br><span class="line">    group <span class="string">'360reinforce'</span></span><br><span class="line">    dependsOn(<span class="string">"assembleRelease"</span>)</span><br><span class="line"></span><br><span class="line">    doLast &#123;</span><br><span class="line">        cleanFilesPath(CHANNEL_APKS_PATH)   <span class="comment">//清空上一次生成的渠道包</span></span><br><span class="line">        <span class="keyword">def</span> releaseApkFile = findApkFile(DEFAULT_APK_PATH, <span class="string">"-release"</span>)  <span class="comment">//遍历文件，寻找release包</span></span><br><span class="line">        println <span class="string">"--release--1-"</span> + releaseApkFile</span><br><span class="line">        <span class="keyword">if</span> (releaseApkFile != <span class="literal">null</span>) &#123;</span><br><span class="line">            reinforceApk(releaseApkFile, SOURCE_APK_PATH)   <span class="comment">//执行加固</span></span><br><span class="line">            <span class="keyword">def</span> reinforceApk = findApkFile(SOURCE_APK_PATH, <span class="string">"_jiagu"</span>)  <span class="comment">//寻找已加固的apk包</span></span><br><span class="line">            println <span class="string">"--jiagu--2-"</span> + reinforceApk</span><br><span class="line">            <span class="keyword">if</span>(reinforceApk != <span class="literal">null</span>) &#123;</span><br><span class="line">                zipAlignApk(reinforceApk) <span class="comment">// zip对齐</span></span><br><span class="line">                <span class="keyword">def</span> zipAlignApk = findApkFile(SOURCE_APK_PATH, <span class="string">"_zip"</span>)</span><br><span class="line">                <span class="keyword">if</span> (zipAlignApk != <span class="literal">null</span>) &#123;</span><br><span class="line">                    signApkV2(zipAlignApk)  <span class="comment">//使用V2重签名</span></span><br><span class="line">                    <span class="keyword">def</span> signatureApk = findApkFile(SOURCE_APK_PATH, <span class="string">"_sign"</span>)</span><br><span class="line">                    println <span class="string">"--sign--3-"</span> + signatureApk</span><br><span class="line">                    <span class="keyword">if</span>(signatureApk != <span class="literal">null</span>) &#123;</span><br><span class="line">                        buildChannelApks(signatureApk)  <span class="comment">//执行多渠道打包</span></span><br><span class="line">                        renameChannelApkFiles(CHANNEL_APKS_PATH) <span class="comment">//重命名渠道包</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+   2. 执行加固命令，将release包路径设置到命令中，并指定加固apk文件的输出路径
+      3. 找到已加固的apk文件，对已加固apk文件进行对齐、重签名。（360已加固的apk文件会在原有的release文件名后面加上&quot;_jiagu&quot;）
+         4. 找到重新签名的apk文件，执行多渠道打包命令。（重签名后的文件名是在原有文件名后面加上&quot;_sign&quot;）</code></pre><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">task assembleReinforceRelease() &#123;</span><br><span class="line">    group <span class="string">'360reinforce'</span></span><br><span class="line">    dependsOn(<span class="string">"assembleRelease"</span>)</span><br><span class="line"></span><br><span class="line">    doLast &#123;</span><br><span class="line">        cleanFilesPath(CHANNEL_APKS_PATH)   <span class="comment">//清空上一次生成的渠道包</span></span><br><span class="line">        <span class="keyword">def</span> releaseApkFile = findApkFile(DEFAULT_APK_PATH, <span class="string">"-release"</span>)  <span class="comment">//遍历文件，寻找release包</span></span><br><span class="line">        println <span class="string">"--release--1-"</span> + releaseApkFile</span><br><span class="line">        <span class="keyword">if</span> (releaseApkFile != <span class="literal">null</span>) &#123;</span><br><span class="line">            reinforceApk(releaseApkFile, SOURCE_APK_PATH)   <span class="comment">//执行加固</span></span><br><span class="line">            <span class="keyword">def</span> reinforceApk = findApkFile(SOURCE_APK_PATH, <span class="string">"_jiagu"</span>)  <span class="comment">//寻找已加固的apk包</span></span><br><span class="line">            println <span class="string">"--jiagu--2-"</span> + reinforceApk</span><br><span class="line">            <span class="keyword">if</span>(reinforceApk != <span class="literal">null</span>) &#123;</span><br><span class="line">                zipAlignApk(reinforceApk) <span class="comment">// zip对齐</span></span><br><span class="line">                <span class="keyword">def</span> zipAlignApk = findApkFile(SOURCE_APK_PATH, <span class="string">"_zip"</span>)</span><br><span class="line">                <span class="keyword">if</span> (zipAlignApk != <span class="literal">null</span>) &#123;</span><br><span class="line">                    signApkV2(zipAlignApk)  <span class="comment">//使用V2重签名</span></span><br><span class="line">                    <span class="keyword">def</span> signatureApk = findApkFile(SOURCE_APK_PATH, <span class="string">"_sign"</span>)</span><br><span class="line">                    println <span class="string">"--sign--3-"</span> + signatureApk</span><br><span class="line">                    <span class="keyword">if</span>(signatureApk != <span class="literal">null</span>) &#123;</span><br><span class="line">                        buildChannelApks(signatureApk)  <span class="comment">//执行多渠道打包</span></span><br><span class="line">                        renameChannelApkFiles(CHANNEL_APKS_PATH) <span class="comment">//重命名渠道包</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>代码优化:</p>
 <ol>
@@ -361,7 +367,7 @@
 <p><strong>涉及到的各种常量，各种密钥名、路径都要根据自己的实际情况修改：</strong></p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*加载keystore.properties信息到该gradle文件中*/</span></span><br><span class="line"><span class="keyword">def</span> keystorePropertiesFile = rootProject.file(<span class="string">"keystore.properties"</span>)</span><br><span class="line"><span class="keyword">def</span> keystoreProperties = <span class="keyword">new</span> Properties()</span><br><span class="line">keystoreProperties.load(<span class="keyword">new</span> FileInputStream(keystorePropertiesFile))</span><br><span class="line"></span><br><span class="line">ext &#123;</span><br><span class="line">    <span class="comment">/*加固*/</span></span><br><span class="line">    REINFORCE_JAR = <span class="string">"$&#123;project.rootDir&#125;/jiagu/jiagu.jar"</span></span><br><span class="line">    REINFORCE_NAME = keystoreProperties[<span class="string">'360_NAME'</span>] <span class="comment">//360加固账号</span></span><br><span class="line">    REINFORCE_PASSWORD = keystoreProperties[<span class="string">'360_PASSWORD'</span>] <span class="comment">//360加固密码</span></span><br><span class="line">    KEY_PATH = keystoreProperties[<span class="string">'storeFile'</span>] <span class="comment">//密钥路径</span></span><br><span class="line">    KEY_PASSWORD = keystoreProperties[<span class="string">'storePassword'</span>] <span class="comment">//密钥密码</span></span><br><span class="line">    ALIAS = keystoreProperties[<span class="string">'keyAlias'</span>] <span class="comment">//密钥别名</span></span><br><span class="line">    ALIAS_PASSWORD = keystoreProperties[<span class="string">'keyPassword'</span>] <span class="comment">//别名密码</span></span><br><span class="line">    SOURCE_APK_PATH = <span class="string">"$&#123;project.buildDir&#125;/bakApk"</span>  <span class="comment">//源apk文件路径</span></span><br><span class="line">    DEFAULT_APK_PATH = <span class="string">"$&#123;project.buildDir&#125;/outputs/apk/release"</span> <span class="comment">//默认release文件路径</span></span><br><span class="line">    <span class="comment">/*多渠道打包*/</span></span><br><span class="line">    WALLE_JAR = <span class="string">"$&#123;project.rootDir&#125;/walle-cli-all.jar"</span></span><br><span class="line">    WALLE_CHANNELS_CONFIG = <span class="string">"$&#123;project.rootDir&#125;/app/channel"</span>  <span class="comment">//渠道配置文件</span></span><br><span class="line">    CHANNEL_APKS_PATH = <span class="string">"$&#123;project.buildDir&#125;/outputs/channels"</span>  <span class="comment">//渠道Apk输出路径</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/cdyiwhy/imgbed/raw/master/img/20200310093134.png" alt=""></p>
+<p><img src="/imgs/360%E5%8A%A0%E5%9B%BA-%E7%BE%8E%E5%9B%A2Walle%E5%A4%9A%E6%B8%A0%E9%81%93%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85/20200310093134.png" alt="20200310093134"></p>
 <p><a href="https://github.com/thisleo/reinforce_walle" target="_blank" rel="noopener">github地址</a></p>
 <p><strong>再次感谢原创作者：天子卿</strong></p>
 <p><strong>附作者文章链接：<a href="https://juejin.im/post/5c825ac6f265da2db9129bd0" target="_blank" rel="noopener">https://juejin.im/post/5c825ac6f265da2db9129bd0</a></strong></p>
@@ -478,7 +484,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
