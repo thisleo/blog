@@ -181,20 +181,20 @@
 <a id="more"></a>
 
 <p>  <strong>这里有坑↑</strong></p>
-<p>  <img src="/imgs/hexo-fancybox/20200722133935.png" alt="20200722133935"></p>
-<p> <img src="/imgs/hexo-fancybox/20200722133949.png" alt="20200722133949"></p>
+<p>  <img src="/imgs/Hexo%E4%BD%BF%E7%94%A8Fancybox%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/20200722133935.png" alt="20200722133935"></p>
+<p><img src="/imgs/Hexo%E4%BD%BF%E7%94%A8Fancybox%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/20200722133949.png" alt="20200722133949"></p>
 <h4 id="问题出现"><a href="#问题出现" class="headerlink" title="问题出现"></a>问题出现</h4><p>​        根据网上的博客看到只需要在<code>themes/next/source/lib/</code>中下载<a href="https://github.com/fancyapps/fancybox" target="_blank" rel="noopener">Fancybox</a> 然后在主题下的<code>_config.yml</code>中找到<code>fancybox</code>设置为<code>true</code>就可以了, 但是设置完成后发现,博客整个都是空白,并且网页有报错提示</p>
-<p><img src="/imgs/hexo-fancybox/20200722132018.png" alt="20200722132018"></p>
+<p><img src="/imgs/Hexo%E4%BD%BF%E7%94%A8Fancybox%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/20200722132018.png" alt="20200722132018"></p>
 <p>根据错误提示发现是<code>js</code>没有导入的问题</p>
-<p><img src="/imgs/hexo-fancybox/20200722132138.png" alt="20200722132138"></p>
+<p><img src="/imgs/Hexo%E4%BD%BF%E7%94%A8Fancybox%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/20200722132138.png" alt="20200722132138"></p>
 <p>网上搜索问题都只是介绍将<code>theme/next/_config.yml</code>下的<code>fancybox</code>设置为<code>true</code>, 却没有提示导入<code>js</code>文件, 纠结了好长时间</p>
 <h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><p>通过查看<a href="https://github.com/theme-next/theme-next-fancybox3" target="_blank" rel="noopener">theme-next-fancybox3</a>的使用方法发现了</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">vendors:</span><br><span class="line">  ...</span><br><span class="line">  fancybox: <span class="comment">//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js</span></span><br><span class="line">  fancybox_css: <span class="comment">//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css</span></span><br></pre></td></tr></table></figure>
 
 <p>然后回头看<code>theme/next/_config.yml</code>中发现还有一段注释</p>
-<p><img src="/imgs/hexo-fancybox/20200722132746.png" alt="20200722132746"></p>
+<p><img src="/imgs/Hexo%E4%BD%BF%E7%94%A8Fancybox%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/20200722132746.png" alt="20200722132746"></p>
 <p>好像找到解决方法了, 试了下将这里注释掉,放开cdn的注释</p>
-<p><img src="/imgs/hexo-fancybox/20200722132646.png" alt="20200722132646"></p>
+<p><img src="/imgs/Hexo%E4%BD%BF%E7%94%A8Fancybox%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/20200722132646.png" alt="20200722132646"></p>
 <p>然后就OK了, 记录下帮助后人</p>
 ]]></content>
       <categories>
