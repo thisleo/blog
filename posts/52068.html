@@ -21,20 +21,27 @@
     var CONFIG = {"hostname":"matlab.xyz","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="本 Hexo 插件可以在博客中隐藏指定的文章，并使它们仅可通过链接访问。 当一篇文章被设置为「隐藏」时，它不会出现在任何列表中（包括首页、存档、分类页面、标签页面、Feed、站点地图等），也不会被搜索引擎索引（前提是搜索引擎遵守 noindex 标签）。 只有知道文章链接的人才可以访问被隐藏的文章。  安装在站点根目录下执行npm install hexo-hide-posts --save 配">
+  <meta name="description" content="无论您拥有的是 Android 智能手机还是 Android 电视，操作系统的本质都是一样的。换句话说，Android TV 与任何其他 Android 设备一样可调整。 如果您计划执行一些重大调整，例如旁加载 Android 应用程序，您将需要 Android Debug Bridge 或 ADB 的帮助。让我们看看如何使用 ADB 将您的 Android TV 连接到您的 PC。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo如何隐藏文章">
-<meta property="og:url" content="https://matlab.xyz/posts/1599.html">
+<meta property="og:title" content="如何在 Android TV 上设置和使用 ADB">
+<meta property="og:url" content="https://matlab.xyz/posts/52068.html">
 <meta property="og:site_name" content="程序元之路">
-<meta property="og:description" content="本 Hexo 插件可以在博客中隐藏指定的文章，并使它们仅可通过链接访问。 当一篇文章被设置为「隐藏」时，它不会出现在任何列表中（包括首页、存档、分类页面、标签页面、Feed、站点地图等），也不会被搜索引擎索引（前提是搜索引擎遵守 noindex 标签）。 只有知道文章链接的人才可以访问被隐藏的文章。  安装在站点根目录下执行npm install hexo-hide-posts --save 配">
+<meta property="og:description" content="无论您拥有的是 Android 智能手机还是 Android 电视，操作系统的本质都是一样的。换句话说，Android TV 与任何其他 Android 设备一样可调整。 如果您计划执行一些重大调整，例如旁加载 Android 应用程序，您将需要 Android Debug Bridge 或 ADB 的帮助。让我们看看如何使用 ADB 将您的 Android TV 连接到您的 PC。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-05-21T08:11:07.000Z">
-<meta property="article:modified_time" content="2022-05-21T17:54:02.924Z">
+<meta property="og:image" content="https://matlab.xyz/imgs/%E5%A6%82%E4%BD%95%E5%9C%A8-Android-TV-%E4%B8%8A%E8%AE%BE%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8-ADB/Android-tv-about-device.webp">
+<meta property="og:image" content="https://matlab.xyz/imgs/%E5%A6%82%E4%BD%95%E5%9C%A8-Android-TV-%E4%B8%8A%E8%AE%BE%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8-ADB/Android-tv-enable-usb-debugging-developer-options.webp">
+<meta property="og:image" content="https://matlab.xyz/imgs/%E5%A6%82%E4%BD%95%E5%9C%A8-Android-TV-%E4%B8%8A%E8%AE%BE%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8-ADB/Android-TV-status-ip-address.png">
+<meta property="og:image" content="https://matlab.xyz/imgs/%E5%A6%82%E4%BD%95%E5%9C%A8-Android-TV-%E4%B8%8A%E8%AE%BE%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8-ADB/Set-up-adb-wireless-Android-TV.jpeg">
+<meta property="og:image" content="https://matlab.xyz/imgs/%E5%A6%82%E4%BD%95%E5%9C%A8-Android-TV-%E4%B8%8A%E8%AE%BE%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8-ADB/Android-tv-allow-USB-debugging.png">
+<meta property="article:published_time" content="2022-05-22T18:04:46.000Z">
+<meta property="article:modified_time" content="2022-05-22T18:20:48.666Z">
 <meta property="article:author" content="Chendy">
 <meta property="article:tag" content="教程">
+<meta property="article:tag" content="Android">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://matlab.xyz/imgs/%E5%A6%82%E4%BD%95%E5%9C%A8-Android-TV-%E4%B8%8A%E8%AE%BE%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8-ADB/Android-tv-about-device.webp">
 
-<link rel="canonical" href="https://matlab.xyz/posts/1599.html">
+<link rel="canonical" href="https://matlab.xyz/posts/52068.html">
 
 
 <script id="page-configurations">
@@ -47,7 +54,7 @@
   };
 </script>
 
-  <title>Hexo如何隐藏文章 | 程序元之路</title><meta name="robots" content="noindex">
+  <title>如何在 Android TV 上设置和使用 ADB | 程序元之路</title>
   
 
 
@@ -192,7 +199,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://matlab.xyz/posts/1599.html">
+    <link itemprop="mainEntityOfPage" href="https://matlab.xyz/posts/52068.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -205,7 +212,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hexo如何隐藏文章
+          如何在 Android TV 上设置和使用 ADB
         </h1>
 
         <div class="post-meta">
@@ -214,16 +221,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2022-05-21 16:11:07" itemprop="dateCreated datePublished" datetime="2022-05-21T16:11:07+08:00">2022-05-21</time>
+              <time title="创建时间：2022-05-23 02:04:46 / 修改时间：02:20:48" itemprop="dateCreated datePublished" datetime="2022-05-23T02:04:46+08:00">2022-05-23</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-22 01:54:02" itemprop="dateModified" datetime="2022-05-22T01:54:02+08:00">2022-05-22</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -252,22 +253,58 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <blockquote>
-<p>本 Hexo 插件可以在博客中隐藏指定的文章，并使它们仅可通过链接访问。</p>
-<p>当一篇文章被设置为「隐藏」时，它不会出现在任何列表中（包括首页、存档、分类页面、标签页面、Feed、站点地图等），也不会被搜索引擎索引（前提是搜索引擎遵守 noindex 标签）。</p>
-<p>只有知道文章链接的人才可以访问被隐藏的文章。</p>
-</blockquote>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>在站点根目录下执行<code>npm install hexo-hide-posts --save</code></p>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>在站点目录下的<code>_config.yml</code>中如下配置：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># hexo-hide-posts</span></span><br><span class="line"><span class="attr">hide_posts:</span></span><br><span class="line">  <span class="comment"># 可以改成其他你喜欢的名字</span></span><br><span class="line">  <span class="attr">filter:</span> <span class="string">hidden</span></span><br><span class="line">  <span class="comment"># 指定你想要传递隐藏文章的位置，比如让所有隐藏文章在存档页面可见</span></span><br><span class="line">  <span class="comment"># 常见的位置有：index, tag, category, archive, sitemap, feed, etc.</span></span><br><span class="line">  <span class="comment"># 留空则默认全部隐藏</span></span><br><span class="line">  <span class="attr">public_generators:</span> <span class="string">[]</span></span><br><span class="line">  <span class="comment"># 为隐藏的文章添加 noindex meta 标签，阻止搜索引擎收录</span></span><br><span class="line">  <span class="attr">noindex:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+        <p>无论您拥有的是 Android 智能手机还是 Android 电视，操作系统的本质都是一样的。换句话说，Android TV 与任何其他 Android 设备一样可调整。</p>
+<p>如果您计划执行一些重大调整，例如旁加载 Android 应用程序，您将需要 Android Debug Bridge 或 ADB 的帮助。让我们看看如何使用 ADB 将您的 Android TV 连接到您的 PC。</p>
+<a id="more"></a>
 
-<p>举个栗子：设置 <code>filter: secret</code> 之后，你就可以在 front-matter 中使用 <code>secret: true</code> 来隐藏文章了。</p>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>在文章的属性中定义 <code>hidden: true</code> 即可隐藏文章。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#39;Hidden Post&#39;</span><br><span class="line">date: &#39;2021&#x2F;03&#x2F;05 21:45:14&#39;</span><br><span class="line">hidden: true</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h2 id="如何在您的-PC-上设置-ADB"><a href="#如何在您的-PC-上设置-ADB" class="headerlink" title="如何在您的 PC 上设置 ADB"></a>如何在您的 PC 上设置 ADB</h2><p>当然，第一步是在您的系统上安装 ADB。为此，您需要来自<a href="https://developer.android.com/studio/releases/platform-tools" target="_blank" rel="noopener">Android 开发人员网站</a>的 Android SDK 平台工具。但是，首次设置 ADB 的用户在使用这些工具时经常会遇到错误。</p>
+<p>如果您运行的是 Windows，我们建议您安装<a href="https://forum.xda-developers.com/t/tool-windows-tiny-adb-fastboot-april-2021.3944288/" target="_blank" rel="noopener">xda-developers</a>上提供的 Tiny ADB 和 Fastboot。 macOS 和其他平台用户可以查看我们关于<a href="https://zhongguo.eskere.club/tag/use-adb-fastboot-android/" target="_blank" rel="noopener">如何在 Android 上使用 ADB 和 Fastboot 进行</a>设置的完整指南。</p>
+<p>完成设置后，您需要在 Android TV 上打开 USB 调试模式。</p>
+<p>首先，转到<strong>“设置”&gt;“设备首选项”&gt;“关于”，</strong>然后在“<strong>构建”</strong>上点击几次以解锁“开发人员”选项。</p>
+<p><img src="/imgs/%E5%A6%82%E4%BD%95%E5%9C%A8-Android-TV-%E4%B8%8A%E8%AE%BE%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8-ADB/Android-tv-about-device.webp" alt="Android-tv-about-device"></p>
+<p>您现在可以在设备首<strong>选项中</strong>看到解锁的<strong>开发人员选项</strong>菜单。找到<strong>USB 调试</strong>开关并启用它。</p>
+<p><img src="/imgs/%E5%A6%82%E4%BD%95%E5%9C%A8-Android-TV-%E4%B8%8A%E8%AE%BE%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8-ADB/Android-tv-enable-usb-debugging-developer-options.webp" alt="Android-tv-enable-usb-debugging-developer-options"></p>
+<h2 id="如何使用-ADB-将-Android-TV-连接到您的-PC"><a href="#如何使用-ADB-将-Android-TV-连接到您的-PC" class="headerlink" title="如何使用 ADB 将 Android TV 连接到您的 PC"></a>如何使用 ADB 将 Android TV 连接到您的 PC</h2><p>通常，我们使用 USB 数据线将 PC 与 Android 连接。由于这在 Android 电视上不可行，因此制造商允许您以<a href="https://zhongguo.eskere.club/use-adb-over-wifi-android/" target="_blank" rel="noopener">无线</a>方式<a href="https://zhongguo.eskere.club/use-adb-over-wifi-android/" target="_blank" rel="noopener">设置 ADB</a> 。要做到这一点：</p>
+<ol>
+<li><p>在您的 Android TV 上，转到<strong>设置 &gt; 设备首选项 &gt; 关于 &gt; 状态</strong>并记下<strong>IP 地址</strong>。</p>
+<p><img src="/imgs/%E5%A6%82%E4%BD%95%E5%9C%A8-Android-TV-%E4%B8%8A%E8%AE%BE%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8-ADB/Android-TV-status-ip-address.png" alt="Android-TV-status-ip-address"></p>
+</li>
+<li><p>在您的 PC 上打开命令提示符并输入命令 <code>adb connect</code>  。</p>
+<p><img src="/imgs/%E5%A6%82%E4%BD%95%E5%9C%A8-Android-TV-%E4%B8%8A%E8%AE%BE%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8-ADB/Set-up-adb-wireless-Android-TV.jpeg" alt="Set-up-adb-wireless-Android-TV"></p>
+</li>
+<li><p>您将在 Android TV 上收到提示，要求您授权与计算机的连接。点击<strong>确定</strong>。</p>
+<p><img src="/imgs/%E5%A6%82%E4%BD%95%E5%9C%A8-Android-TV-%E4%B8%8A%E8%AE%BE%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8-ADB/Android-tv-allow-USB-debugging.png" alt="Android-tv-allow-USB-debugging"></p>
+<p>要检查您是否已成功建立与 Android TV 的 ADB 连接，请输入命令<strong>adb devices</strong>并查看设备是否显示在<strong>List of devices connected 下</strong>。</p>
+</li>
+</ol>
+<h2 id="您可以在-Android-TV-上使用-ADB-做什么？"><a href="#您可以在-Android-TV-上使用-ADB-做什么？" class="headerlink" title="您可以在 Android TV 上使用 ADB 做什么？"></a>您可以在 Android TV 上使用 ADB 做什么？</h2><p>以下是通过 ADB 将 Android TV 连接到 PC 后可以执行的一些有用操作。</p>
+<h3 id="旁加载应用程序"><a href="#旁加载应用程序" class="headerlink" title="旁加载应用程序"></a>旁加载应用程序</h3><p>如果您拥有 Android 电视或媒体盒，您会发现设备的应用程序商店中缺少许多应用程序。在 ADB 的帮助下，您可以轻松地在媒体设备上加载应用程序。</p>
+<p>与 Android TV 建立 ADB 连接后，<a href="https://zhongguo.eskere.club/tag/safe-android-apk-downloads/" target="_blank" rel="noopener">下载</a>要安装的 Android 应用程序<a href="https://zhongguo.eskere.club/tag/safe-android-apk-downloads/" target="_blank" rel="noopener">的 APK 文件</a>。在您的 PC 上，输入命令<code>adb install</code>  然后按 <strong>Enter</strong> 。 （或者，您可以将文件拖到命令提示符窗口上以复制其路径。）</p>
+<p>如果您是应用程序开发人员并希望在 Android TV 上测试您的应用程序，旁加载也可以派上用场。</p>
+<h3 id="删除不需要的应用程序"><a href="#删除不需要的应用程序" class="headerlink" title="删除不需要的应用程序"></a>删除不需要的应用程序</h3><p>ADB 可以帮助您从 Android TV 中删除预装的应用程序。尽管大多数应用程序都可以禁用，但有些应用程序已被制造商锁定。</p>
+<p>在 Android TV 上删除默认应用程序的过程类似于在 Android 上<a href="https://zhongguo.eskere.club/how-to-remove-unwanted-default-apps-on-android-without-root/" target="_blank" rel="noopener">删除不需要的预安装应用程序</a>。</p>
+<ol>
+<li>建立 ADB 连接后，在命令提示符中输入命令<code>adb shell</code></li>
+<li>现在输入<code>pm uninstall -k –user 0</code></li>
+</ol>
+<p>您可以在 Google Play 商店中名为<a href="https://play.google.com/store/apps/details?id=bg.projectoria.appinspector" target="_blank" rel="noopener">App Inspector</a>的免费应用程序的帮助下找到包名称。或者，键入<code>adb shell list packages</code> ，它将列出所有已安装应用程序的所有包名称。</p>
+<h3 id="其他基本-ADB-命令"><a href="#其他基本-ADB-命令" class="headerlink" title="其他基本 ADB 命令"></a>其他基本 ADB 命令</h3><p>以下是可以派上用场的基本 ADB 命令列表：</p>
+<ul>
+<li><strong>adb reboot</strong> 将重启 Android 设备。</li>
+<li><strong>adb reboot recovery</strong> 将设备重新启动到恢复模式。</li>
+<li><strong>adb push</strong> 将文件从您的 PC 复制到您的 Android 设备。</li>
+<li><strong>adb shell wm density</strong>  改变显示器的像素密度。</li>
+<li><strong>adb kill server</strong> 切断 PC 和 Android TV 之间的连接。</li>
+<li><strong>adb disconnect [ip]</strong>  与Android TV 断开adb连接</li>
+</ul>
+<h3 id="通过adb-安装apk到android设备上"><a href="#通过adb-安装apk到android设备上" class="headerlink" title="通过adb 安装apk到android设备上"></a>通过adb 安装apk到android设备上</h3><p><code>adb devices</code>(用于搜索你的设备 或 模拟器，如果搜索到就可以对它进行安装。手机设备有可能搜索不到，那是你驱动没装好！）</p>
+<p><strong>安装apk</strong></p>
+<p>输入：<code>adb install --(apk完整路径）</code></p>
+<p>例如：<code>adb install c:/NetScramble_1.1.apk</code></p>
+<p><strong>卸载apk</strong></p>
+<p>与安装类似的，卸妆是利用adb执行一个卸妆指令：</p>
+<p> 输入：<code>adb shell rm data/app/NetScramble_1.1.apk</code></p>
 
-<p>虽然首页上被隐藏了，但你仍然可以通过 <code>https://hexo.test/lorem-ipsum/</code> 链接访问它。</p>
-<p>你可以在命令行运行 <code>hexo hidden:list</code> 来获取当前所有的已隐藏文章列表。</p>
-<!-- flag of hidden posts -->
     </div>
 
     
@@ -285,21 +322,26 @@
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/posts/7065.html" rel="bookmark">Git常用命令</a></div>
     </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/posts/52068.html" rel="bookmark">如何在 Android TV 上设置和使用 ADB</a></div>
-    </li>
   </ul>
 
 
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"># 教程</a>
+              <a href="/tags/Android/" rel="tag"># Android</a>
           </div>
 
         
 
 
         
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/7065.html" rel="prev" title="Git常用命令">
+      <i class="fa fa-chevron-left"></i> Git常用命令
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
       </footer>
     
   </article>
@@ -368,7 +410,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用"><span class="nav-number">3.</span> <span class="nav-text">使用</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何在您的-PC-上设置-ADB"><span class="nav-number">1.</span> <span class="nav-text">如何在您的 PC 上设置 ADB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用-ADB-将-Android-TV-连接到您的-PC"><span class="nav-number">2.</span> <span class="nav-text">如何使用 ADB 将 Android TV 连接到您的 PC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#您可以在-Android-TV-上使用-ADB-做什么？"><span class="nav-number">3.</span> <span class="nav-text">您可以在 Android TV 上使用 ADB 做什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#旁加载应用程序"><span class="nav-number">3.1.</span> <span class="nav-text">旁加载应用程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除不需要的应用程序"><span class="nav-number">3.2.</span> <span class="nav-text">删除不需要的应用程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他基本-ADB-命令"><span class="nav-number">3.3.</span> <span class="nav-text">其他基本 ADB 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过adb-安装apk到android设备上"><span class="nav-number">3.4.</span> <span class="nav-text">通过adb 安装apk到android设备上</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
