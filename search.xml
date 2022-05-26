@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Android NDK崩溃解决办法</title>
+    <url>/posts/61292.html</url>
+    <content><![CDATA[<h1 id="崩溃信息signal-11-SIGSEGV-code-1-SEGV-MAPERR-定位问题"><a href="#崩溃信息signal-11-SIGSEGV-code-1-SEGV-MAPERR-定位问题" class="headerlink" title="崩溃信息signal 11 (SIGSEGV), code 1 (SEGV_MAPERR) 定位问题"></a>崩溃信息signal 11 (SIGSEGV), code 1 (SEGV_MAPERR) 定位问题</h1><p>在NDK开发的过程中，如果遇到应用Crash，JNI层的报错信息并不像java层那样可以看到详细的错误信息和错误位置，如果要想定位到错误位置，需要借助NDK的一些工具进行<a href="https://so.csdn.net/so/search?q=地址转换&spm=1001.2101.3001.7020" target="_blank" rel="noopener">地址转换</a>，本文中用addr2line（NDK的工具）来捕捉错误信息</p>
+<a id="more"></a>
+
+
+
+<p>以下是我的报错信息</p>
+<p><img src="/imgs/Android-NDK%E5%B4%A9%E6%BA%83%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/image-20220526111816991.png" alt="image-20220526111816991"></p>
+<p>1.错误代号：signal 11 (SIGSEGV), code 1 (SEGV_MAPERR)，一般都是空指针错误</p>
+<p>2.错误发生所在的so文件：libalvr_client.so</p>
+<p>3.错误发生的内存地址：000000000020a950，不能直接看到源代码发生错误的位置，所以需要用addr2line工具来定位</p>
+<p><strong>备注：记得一定要将logcat选择为No Filter才能看上全部错误信息，否则只看到signal 11 (SIGSEGV), code 1 (SEGV_MAPERR)这个信息，会让你怀疑人生</strong></p>
+<h3 id="利用addr2line定位错误"><a href="#利用addr2line定位错误" class="headerlink" title="利用addr2line定位错误"></a>利用addr2line定位错误</h3><ol>
+<li><p>首先找到addr2line的位置，我的addr2line位置为 <code>/Users/Chendy/Library/Android/sdk/ndk-bundle/toolchains/aarch64-linux-android-4.9/prebuilt/darwin-x86_64/bin/aarch64-linux-android-addr2line</code>，然后在Android studio的Terminal中定位到这个位置。</p>
+</li>
+<li><p>找到出错so文件的位置，在我的电脑中，发生错误的so文件是libvrapi.so，它的位置是 <code>/Users/Chendy/Public/Rust/ALVR/alvr/client/android/app/src/main/jniLibs/arm64-v8a/libvrapi.so</code></p>
+</li>
+<li><p>然后在Terminal中 </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/Users/Chendy/Library/Android/sdk/ndk-bundle/toolchains/aarch64-linux-android-4.9/prebuilt/darwin-x86_64/bin/./aarch64-linux-android-addr2line -C -f -e /Users/Chendy/Public/Rust/ALVR/alvr/client/android/app/build/rustJniLibs/android/arm64-v8a/libalvr_client.so 000000000020a950</span><br></pre></td></tr></table></figure>
+
+<p><img src="/imgs/Android-NDK%E5%B4%A9%E6%BA%83%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/image-20220526112440366.png" alt="image-20220526112440366"></p>
+</li>
+<li><p>其中-C -f ：表示打印错误行数所在的函数名称，-e：表示打印错误地址的对应路径及行数</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>bug</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>如何在 Android TV 上设置和使用 ADB</title>
     <url>/posts/52068.html</url>
     <content><![CDATA[<p>无论您拥有的是 Android 智能手机还是 Android 电视，操作系统的本质都是一样的。换句话说，Android TV 与任何其他 Android 设备一样可调整。</p>
