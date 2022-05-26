@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Git报错Could not resolve host</title>
+    <url>/posts/35972.html</url>
+    <content><![CDATA[<blockquote>
+<p>因为疫情，居家办公中，公司的项目代码都在内网git服务器上，只能通过VPN连接；因此出现了git clone代码时报错，提示信息为 could not resolve host</p>
+</blockquote>
+<a id="more"></a>
+
+<p>虽然git clone报错，但是通过浏览器可以登录git仓库，因此定位问题是DNS解析的问题，只需修改本机的host地址就可以了</p>
+<p>Mac下：</p>
+<ol>
+<li>打开Mac系统中的Finder应用</li>
+<li>接下来请按快捷键组合Shift+Command+G三个组合按键，并输入hosts文件的所在路径/etc/hosts</li>
+<li>在Finder窗口中看到hosts文件</li>
+<li>打开修改</li>
+<li>添加地址和域名</li>
+<li>重新拉取成功</li>
+</ol>
+<p><img src="/imgs/Git%E6%8A%A5%E9%94%99Could-not-resolve-host/image-20220526165156959.png" alt="image-20220526165156959"></p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git检出分支报错问题</title>
+    <url>/posts/7796.html</url>
+    <content><![CDATA[<h1 id="error-The-following-untracked-working-tree-files-would-be-overwritten-by"><a href="#error-The-following-untracked-working-tree-files-would-be-overwritten-by" class="headerlink" title="error: The following untracked working tree files would be overwritten by"></a>error: The following untracked working tree files would be overwritten by</h1><p>使用Git检出分支时提示这个报错信息</p>
+<a id="more"></a>
+
+<p><img src="/imgs/Git%E6%A3%80%E5%87%BA%E5%88%86%E6%94%AF%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98/image-20220526162256071.png" alt="image-20220526162256071"></p>
+<p><strong>通过错误提⽰可知，是由于⼀些untracked working tree files引起的问题。所以只要解决了这些untracked的⽂件就能解决这个问题</strong></p>
+<p>解决方式：</p>
+<ul>
+<li><p>进入本地版本仓库目录下，执行</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clean -d -fx</span><br></pre></td></tr></table></figure>
+
+<p><code>git clean -d -fx</code>表⽰：删除⼀些没有 git add 的⽂件</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clean 参数</span><br><span class="line">-n 显⽰将要删除的⽂件和⽬录；</span><br><span class="line">-x -----删除忽略⽂件已经对git来说不识别的⽂件</span><br><span class="line">-d -----删除未被添加到git的路径中的⽂件</span><br><span class="line">-f -----强制运⾏</span><br><span class="line">git clean -n</span><br><span class="line">git clean -df</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Android NDK崩溃解决办法</title>
     <url>/posts/61292.html</url>
     <content><![CDATA[<h1 id="崩溃信息signal-11-SIGSEGV-code-1-SEGV-MAPERR-定位问题"><a href="#崩溃信息signal-11-SIGSEGV-code-1-SEGV-MAPERR-定位问题" class="headerlink" title="崩溃信息signal 11 (SIGSEGV), code 1 (SEGV_MAPERR) 定位问题"></a>崩溃信息signal 11 (SIGSEGV), code 1 (SEGV_MAPERR) 定位问题</h1><p>在NDK开发的过程中，如果遇到应用Crash，JNI层的报错信息并不像java层那样可以看到详细的错误信息和错误位置，如果要想定位到错误位置，需要借助NDK的一些工具进行<a href="https://so.csdn.net/so/search?q=地址转换&spm=1001.2101.3001.7020" target="_blank" rel="noopener">地址转换</a>，本文中用addr2line（NDK的工具）来捕捉错误信息</p>
@@ -27,6 +82,7 @@
 <li><p>其中-C -f ：表示打印错误行数所在的函数名称，-e：表示打印错误地址的对应路径及行数</p>
 </li>
 </ol>
+<p>windows参考<a href="https://blog.csdn.net/liuxingrong666/article/details/102483705" target="_blank" rel="noopener">这里</a></p>
 ]]></content>
       <categories>
         <category>Android</category>
